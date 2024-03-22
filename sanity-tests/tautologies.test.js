@@ -48,3 +48,15 @@ test('string is string', () => {
 test('typeof string is string', () => {
     expect(typeof "string").toBe('string');
 });
+
+test('NaN is NaN', () => {
+    expect(NaN).toBe(NaN);
+});
+
+test('Infinity is Infinity', () => { 
+    expect(Infinity).toBe(Infinity);
+});
+
+test('Infinity equals Number.POSITIVE_INFINITY', () => {
+    expect(Number.POSITIVE_INFINITY == Infinity).toBe(true);
+});
