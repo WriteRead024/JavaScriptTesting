@@ -10,19 +10,19 @@ const os = require('os');
 
 //from node 20.10.0
 const osObjectKeys = [
-    'arch',        'availableParallelism',
-    'cpus',        'endianness',
-    'freemem',     'getPriority',
-    'homedir',     'hostname',
-    'loadavg',     'networkInterfaces',
-    'platform',    'release',
+    'arch', 'availableParallelism',
+    'cpus', 'endianness',
+    'freemem', 'getPriority',
+    'homedir', 'hostname',
+    'loadavg', 'networkInterfaces',
+    'platform', 'release',
     'setPriority', 'tmpdir',
-    'totalmem',    'type',
-    'userInfo',    'uptime',
-    'version',     'machine',
-    'constants',   'EOL',
+    'totalmem', 'type',
+    'userInfo', 'uptime',
+    'version', 'machine',
+    'constants', 'EOL',
     'devNull'
-  ];
+];
 
 test('os object has expected keys', () => {
     const osKeys = Object.keys(os);
@@ -34,7 +34,7 @@ test('OS is Linux and version is greater than 6.7', () => {
     const osType = os.type();
     const osPlatform = os.platform();
     const osVersion = os.release();
-    
+
     expect(osType).toBe('Linux');
     expect(osPlatform).toBe('linux');
     // interesting that parseFloat did not throw an error
@@ -69,7 +69,7 @@ test('os.userInfo, os.hostname, and os.machine are functions', () => {
 
 test('os.constants is not null, is not undefined, and has a null prototype', () => {
     const prototype = Object.getPrototypeOf(os.constants);
-    
+
     expect(os.constants).not.toBeNull();
     expect(os.constants).not.toBeUndefined();
     expect(prototype).toBe(null);
