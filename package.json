@@ -1,0 +1,27 @@
+{
+  "name": "javascripttesting",
+  "version": "0.3.0",
+  "description": "A collection of JavaScript functions and features tests.",
+  "main": "javascript-testing.js",
+  "dependencies": {},
+  "devDependencies": {  },
+  "scripts": {
+    "test": "jesttest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/WriteRead024/JavaScriptTesting.git"
+  },
+  "keywords": [
+    "JavaScript",
+    "testing",
+    "tests",
+    "test"
+  ],
+  "author": "Rich W.",
+  "license": "Cube",
+  "bugs": {
+    "url": "https://github.com/WriteRead024/JavaScriptTesting/issues"
+  },
+  "homepage": "https://github.com/WriteRead024/JavaScriptTesting#readme"
+}
