@@ -1,8 +1,9 @@
 {
   "name": "javascripttesting",
+  "private": true,
   "version": "0.3.0",
   "description": "A collection of JavaScript functions and features tests.",
-  "main": "javascript-testing.js",
+  "main": "javascripttesting.js",
   "devDependencies": {
     "jest": "^29.7.0"
   },
@@ -20,7 +21,7 @@
     "test"
   ],
   "author": "Rich W.",
-  "license": "Cube",
+  "license": "MSL.l",
   "bugs": {
     "url": "https://github.com/WriteRead024/JavaScriptTesting/issues"
   },
