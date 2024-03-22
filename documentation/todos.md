@@ -9,4 +9,4 @@
 - [ ] add a warnings system to Jest
     - [ ] consider Jest notifications
     - [ ] then put some of the environment details type tests on warnings
-- [ ] truthiness
+- [ ] a reference for truthiness, maybe more truthiness tests
