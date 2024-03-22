@@ -3,8 +3,9 @@
   "version": "0.3.0",
   "description": "A collection of JavaScript functions and features tests.",
   "main": "javascript-testing.js",
-  "dependencies": {},
-  "devDependencies": {  },
+  "devDependencies": {
+    "jest": "^29.7.0"
+  },
   "scripts": {
     "test": "jesttest"
   },
