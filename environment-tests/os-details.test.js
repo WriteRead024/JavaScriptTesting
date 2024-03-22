@@ -1,6 +1,6 @@
 'set strict'
 
-// node-details.test.js
+// os-details.test.js
 // started 3/22/2024
 // Rich W.
 // with

@@ -1,5 +1,5 @@
 
-// node-details.test.js
+// tautologies.test.js
 // started 3/22/2024
 // Rich W.
 
