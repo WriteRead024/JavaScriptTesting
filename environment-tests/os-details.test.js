@@ -8,6 +8,28 @@
 
 const os = require('os');
 
+//from node 20.10.0
+const osObjectKeys = [
+    'arch',        'availableParallelism',
+    'cpus',        'endianness',
+    'freemem',     'getPriority',
+    'homedir',     'hostname',
+    'loadavg',     'networkInterfaces',
+    'platform',    'release',
+    'setPriority', 'tmpdir',
+    'totalmem',    'type',
+    'userInfo',    'uptime',
+    'version',     'machine',
+    'constants',   'EOL',
+    'devNull'
+  ];
+
+test('os object has expected keys', () => {
+    const osKeys = Object.keys(os);
+
+    expect(osKeys).toEqual(osObjectKeys);
+});
+
 test('OS is Linux and version is greater than 6.7', () => {
     const osType = os.type();
     const osPlatform = os.platform();
