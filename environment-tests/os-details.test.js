@@ -1,3 +1,4 @@
+'set strict'
 
 // node-details.test.js
 // started 3/22/2024
@@ -19,32 +20,32 @@ test('OS is Linux and version is greater than 6.7', () => {
     expect(parseFloat(osVersion)).toBeGreaterThanOrEqual(6.7);
 });
 
-test('Check that the architecture is x64', () => {
+test('os.arch is x64', () => {
     const osArch = os.arch();
 
     expect(osArch).toBe('x64');
 });
 
-test('Check that os.availableParallelism is a function', () => {
+test('os.availableParallelism is a function', () => {
     expect(typeof os.availableParallelism).toBe('function');
 });
 
-test('Check that os.endianness is LE', () => {
+test('os.endianness is LE', () => {
     expect(os.endianness()).toBe('LE');
 });
 
-test('Check that os.freemem and os.totalmem are functions', () => {
+test('os.freemem and os.totalmem are functions', () => {
     expect(typeof os.freemem).toBe('function');
     expect(typeof os.totalmem).toBe('function');
 });
 
-test('Check that os.userInfo, os.hostname, and os.machine are functions', () => {
+test('os.userInfo, os.hostname, and os.machine are functions', () => {
     expect(typeof os.userInfo).toBe('function');
     expect(typeof os.hostname).toBe('function');
     expect(typeof os.machine).toBe('function');
 });
 
-test('Check that os.constants is not null, is not undefined, and has a null prototype', () => {
+test('os.constants is not null, is not undefined, and has a null prototype', () => {
     const prototype = Object.getPrototypeOf(os.constants);
     
     expect(os.constants).not.toBeNull();
@@ -52,12 +53,12 @@ test('Check that os.constants is not null, is not undefined, and has a null prot
     expect(prototype).toBe(null);
 });
 
-test('Check that os has functions setPriority and getPriority', () => {
+test('os has functions setPriority and getPriority', () => {
     expect(typeof os.setPriority).toBe('function');
     expect(typeof os.getPriority).toBe('function');
 });
 
-test('Check that os.devNull and os.EOL are type string', () => {
+test('os.devNull and os.EOL are type string', () => {
     expect(typeof os.devNull).toBe('string');
     expect(typeof os.EOL).toBe('string');
 });
