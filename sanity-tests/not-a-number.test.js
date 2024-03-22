@@ -32,3 +32,11 @@ test('isNaN(parseInt("string")) is true', () => {
 test('isNaN(Number.NaN) is true', () => {
     expect(isNaN(Number.NaN)).toBe(true);
 });
+
+test('isNaN(parseInt("string")) is true', () => {
+    expect(isNaN(parseInt("string"))).toBe(true);
+});
+
+test('NaN is NaN', () => {
+    expect(NaN).toBe(NaN);
+});
