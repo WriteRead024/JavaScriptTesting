@@ -1,5 +1,6 @@
 // chained-generator.test.js
 // 4/20/2024
+// 4/21/2024
 // Rich W.
 // with
 // GitHub Copilot
@@ -37,4 +38,10 @@ describe('ChainGenerator class', () => {
         chaingenerator.next().next().next();
         expect(chaingenerator.order).toEqual(['first', 'second', 'third']);
     });
+
+    test('calling next a fourth time should not add to the order', () => {
+        chaingenerator.next().next().next().next();
+        expect(chaingenerator.order).toEqual(['first', 'second', 'third']);
+    });
 });
+
