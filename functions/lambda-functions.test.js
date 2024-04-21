@@ -1,3 +1,9 @@
+// lambda-functions.test.js
+// started 4/21/2024
+// Rich W.
+// with
+// GitHub Copilot
+
 describe('Lambda functions', () => {
     test('should be able to have properties', () => {
         let lambda = () => {};
