@@ -17,10 +17,18 @@ describe('Lambda functions', () => {
         expect(lambda()).toBe('value');
     });
 
-    test('should be able to access its own properties in the method', () => {
-        let lambda = function() { return "property " + this.prop; };
-        expect(lambda.call(lambda)).toBe('property undefined');
+    test('have call methods that work normally', () => {
+        let lambda = () => { return "property " + this.prop; };
+        expect(typeof lambda.call).toBe('function');
         lambda.prop = 'value';
-        expect(lambda.call(lambda)).toBe('property value');
+        expect(lambda.call()).toBe('property undefined');
+    });
+
+    test('cannot access own properties in the method', () => {
+        let lambda = function() { return "property " + this.prop; };
+        expect(lambda()).toBe('property undefined');
+        lambda.prop = 'value';
+        expect(lambda()).not.toBe('property value');
+        expect(lambda()).toBe('property undefined');
     });
 });
