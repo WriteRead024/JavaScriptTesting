@@ -6,7 +6,7 @@
 
 describe('Lambda functions', () => {
     test('should be able to have properties', () => {
-        let lambda = () => {};
+        let lambda = () => { };
         lambda.prop = 'value';
         expect(lambda.prop).toBe('value');
     });
@@ -17,15 +17,30 @@ describe('Lambda functions', () => {
         expect(lambda()).toBe('value');
     });
 
-    test('have call methods that work normally', () => {
-        let lambda = () => { return "property " + this.prop; };
+    test('have call methods that do not work normally', () => {
+        let lambda = () => "property " + this.prop;
         expect(typeof lambda.call).toBe('function');
-        lambda.prop = 'value';
-        expect(lambda.call()).toBe('property undefined');
+        expect(lambda.prop).toBe(undefined);
+        lambda.prop = "value";
+        expect(lambda.prop).toBe('value');
+        expect(lambda.call(/* no argument value passed to call */)).toBe('property undefined');
+        expect(lambda.call(lambda)).toBe('property undefined'); // not "property value"
+        expect(lambda.call(lambda)).not.toBe("property value");
+        // regular function object would return "property value"
+    });
+
+    test('do not work normally with bind method', () => {
+        let lambda = () => "property " + this.prop;
+        expect(typeof lambda.call).toBe('function');
+        expect(lambda.prop).toBe(undefined);
+        lambda.prop = "value";
+        lambda.bind(lambda);
+        expect(lambda()).not.toBe("property value");
+        expect(lambda()).toBe("property undefined");
     });
 
     test('cannot access own properties in the method', () => {
-        let lambda = function() { return "property " + this.prop; };
+        let lambda = () => "property " + this.prop;;
         expect(lambda()).toBe('property undefined');
         lambda.prop = 'value';
         expect(lambda()).not.toBe('property value');
