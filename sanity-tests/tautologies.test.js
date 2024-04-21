@@ -1,6 +1,7 @@
 
 // tautologies.test.js
 // started 3/22/2024
+// continued 4/21/2024
 // Rich W.
 
 
@@ -31,6 +32,18 @@ test('0 is 0', () => {
 
 test('-1 is -1', () => {
     expect(-1).toBe(-1);
+});
+
+test('-0 is not +0', () => {
+    expect(-0).not.toBe(+0);
+});
+
+test('-0 equals +0', () => {
+    expect(-0 == +0).toBe(true);
+});
+
+test('-0 strictly equals +0', () => {
+    expect(-0 === +0).toBe(true);
 });
 
 test('null is null', () => {
