@@ -30,16 +30,19 @@ test('os object has expected keys', () => {
     expect(osKeys).toEqual(osObjectKeys);
 });
 
-test('OS is Linux and version is greater than 6.7', () => {
+test('OS is Linux and version is greater than 6.11', () => {
     const osType = os.type();
     const osPlatform = os.platform();
+    // this looks the same as command line 'uname -r'
     const osVersion = os.release();
+    //console.log(osVersion);
+
+    const versionMatch = osVersion.match(/^\d+\.\d+/);
+    const versionNumber = versionMatch ? parseFloat(versionMatch[0]) : 0;
 
     expect(osType).toBe('Linux');
     expect(osPlatform).toBe('linux');
-    // interesting that parseFloat did not throw an error
-    // when the output of os.release() was like n.n.n-nnn.sss.x86_64
-    expect(parseFloat(osVersion)).toBeGreaterThanOrEqual(6.7);
+    expect(versionNumber).toBeGreaterThanOrEqual(6.11);
 });
 
 test('os.arch is x64', () => {
