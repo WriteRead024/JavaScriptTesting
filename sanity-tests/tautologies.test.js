@@ -2,6 +2,7 @@
 // tautologies.test.js
 // started 3/22/2024
 // additions 4/21/2024
+//           1/9/2024
 // Rich W.
 
 
@@ -73,3 +74,14 @@ test('Infinity is Infinity', () => {
 test('Infinity equals Number.POSITIVE_INFINITY', () => {
     expect(Number.POSITIVE_INFINITY == Infinity).toBe(true);
 });
+
+test('Infinity does not equal Number.NEGATIVE_INFINITY', () => {
+    expect(Number.NEGATIVE_INFINITY == Infinity).not.toBe(true);
+});
+
+test('Infinity equals Number.NEGATIVE_INFINITY times negative one', () => {
+    //perhaps not a tautology, but worthwhile in context
+    expect(Number.NEGATIVE_INFINITY == (Infinity * -1)).toBe(true);
+});
+
+
