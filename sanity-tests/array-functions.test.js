@@ -1,8 +1,8 @@
 // array-functions.test.js
 // started Dec.23,2025
-// Rich W.
-// with
 // GitHub Copilot
+// for
+// Rich W.
 
 describe('Array.prototype.reverse', () => {
 	test('reverses the array in place', () => {
