@@ -2,7 +2,7 @@
 // spread-syntax.test.js
 // 1/9/2025, a US national day of mourning for 39th US President Jimmy Carter
 // Rich W.
-// GitHub VS Code Copilot
+// VS Code GitHub Copilot
 
 // some tests inspired by Google AI Overview search result
 
