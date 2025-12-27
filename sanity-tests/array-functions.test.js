@@ -1,8 +1,18 @@
 // array-functions.test.js
 // started Dec.23,2025
-// GitHub Copilot
-// for
 // Rich W.
+// with
+// GitHub Copilot
+
+describe('Array.push() with spread syntax', () => {
+	test('adds second array elements to first array and does not change second array', () => {
+		const arr_one = [1, 2, 3];
+		const arr_two = [4, 5, 6];
+		arr_one.push(...arr_two.slice(1));
+		expect(arr_one).toEqual([1,2,3,5,6]); // correctly missing 4
+		expect(arr_two).toEqual([4, 5, 6]); // unchanged
+	});
+});
 
 describe('Array.prototype.reverse', () => {
 	test('reverses the array in place', () => {
