@@ -14,6 +14,20 @@ describe('Array.push() with spread syntax', () => {
 	});
 });
 
+describe('Array.forEach()', () => {
+	test('does not assign function return to original array data', () => {
+		const arr = ["a", "b", "c"];
+		arr.forEach((arrval) => arrval + "fE");
+		//expect(arr).toEqual(["afE", "bfE", "cfE"]); //no
+		expect(arr).toEqual(["a", "b", "c"]);
+	});
+	test('can assign new values to original array data by index', () => {
+		const arr = ["a", "b", "c"];
+		arr.forEach((arrval, index) => arr[index] = arrval + "fE");
+		expect(arr).toEqual(["afE", "bfE", "cfE"]);
+	});
+});
+
 describe('Array.prototype.reverse', () => {
 	test('reverses the array in place', () => {
 		const arr = [1, 2, 3];
