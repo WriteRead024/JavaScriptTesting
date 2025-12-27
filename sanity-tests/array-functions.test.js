@@ -9,7 +9,7 @@ describe('Array.push() with spread syntax', () => {
 		const arr_one = [1, 2, 3];
 		const arr_two = [4, 5, 6];
 		arr_one.push(...arr_two.slice(1));
-		expect(arr_one).toEqual([1,2,3,5,6]); // correctly missing 4
+		expect(arr_one).toEqual([1, 2, 3, 5, 6]); // correctly missing 4
 		expect(arr_two).toEqual([4, 5, 6]); // unchanged
 	});
 });
@@ -75,6 +75,12 @@ describe('Array.prototype.sort', () => {
 });
 
 describe('Array.prototype.splice', () => {
+	test('super-simple example', () => {
+		const arr = [1, 2, 3, 4];
+		const removed = arr.splice(0, 1);
+		expect(removed).toEqual([1]);
+		expect(arr).toEqual([2, 3, 4]);
+	});
 	test('removes elements and returns them', () => {
 		const arr = [1, 2, 3, 4];
 		const removed = arr.splice(1, 2);
