@@ -6,6 +6,8 @@
 
 // some tests inspired by Google AI Overview search result
 
+// some additional spread syntax tests in javascript-objects/object-definitons.text.js
+
 test("spread syntax array concatenation", function () {
     const arr1 = [1, 2, 3];
     const arr2 = [4, 5, 6];
