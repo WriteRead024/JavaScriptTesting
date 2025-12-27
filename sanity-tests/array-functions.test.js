@@ -4,16 +4,6 @@
 // with
 // GitHub Copilot
 
-describe('Array.push() with spread syntax', () => {
-	test('adds second array elements to first array and does not change second array', () => {
-		const arr_one = [1, 2, 3];
-		const arr_two = [4, 5, 6];
-		arr_one.push(...arr_two.slice(1));
-		expect(arr_one).toEqual([1, 2, 3, 5, 6]); // correctly missing 4
-		expect(arr_two).toEqual([4, 5, 6]); // unchanged
-	});
-});
-
 describe('Array.forEach()', () => {
 	test('does not assign function return to original array data', () => {
 		const arr = ["a", "b", "c"];
@@ -34,6 +24,16 @@ describe('Array.map()', () => {
 		const resultarr = arr.map((arrval) => arrval + "fE");
 		expect(arr).toEqual(["a", "b", "c"]);
 		expect(resultarr).toEqual(["afE", "bfE", "cfE"]);
+	});
+});
+
+describe('Array.push() with spread syntax', () => {
+	test('adds second array elements to first array and does not change second array', () => {
+		const arr_one = [1, 2, 3];
+		const arr_two = [4, 5, 6];
+		arr_one.push(...arr_two.slice(1));
+		expect(arr_one).toEqual([1, 2, 3, 5, 6]); // correctly missing 4
+		expect(arr_two).toEqual([4, 5, 6]); // unchanged
 	});
 });
 
