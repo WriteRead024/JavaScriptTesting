@@ -28,6 +28,15 @@ describe('Array.forEach()', () => {
 	});
 });
 
+describe('Array.map()', () => {
+	test("assigns called function's return value to new array data", () => {
+		const arr = ["a", "b", "c"];
+		const resultarr = arr.map((arrval) => arrval + "fE");
+		expect(arr).toEqual(["a", "b", "c"]);
+		expect(resultarr).toEqual(["afE", "bfE", "cfE"]);
+	});
+});
+
 describe('Array.prototype.reverse', () => {
 	test('reverses the array in place', () => {
 		const arr = [1, 2, 3];
