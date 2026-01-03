@@ -51,6 +51,9 @@ test("array mutatation in place custom function", function () {
     expect(result).toEqual([2, 4, 6]);
     // The original array should also be mutated
     expect(arr).toEqual([2, 4, 6]);
+    arr[1]++;
+    expect(result).toEqual([2, 5, 6]);
+    expect(result).toEqual([2, 5, 6]);
 });
 
 test("array .map function can return new array", function () {
