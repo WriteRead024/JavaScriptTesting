@@ -24,6 +24,26 @@ test('empty string is falsy', () => {
     expect('').toBeFalsy();
 });
 
+test('empty string is loosely equal to false', () => {
+    expect('' == false).toBe(true);
+})
+
+test('empty string is strictly not equal to false', () => {
+    expect('' === false).toBe(false);
+})
+
+test('empty string toBe(false) expect matcher throws error', () => {
+    let caughterror = null;
+    try {
+        expect('').toBe(true);
+    } catch (error) {
+        caughterror = error;
+    }
+    expect(caughterror).not.toBe(null);
+    //console.log(JSON.stringify(caughterror));
+    expect(caughterror.matcherResult.pass).toBe(false);
+})
+
 test('false is falsy', () => {
     expect(false).toBeFalsy();
 });
