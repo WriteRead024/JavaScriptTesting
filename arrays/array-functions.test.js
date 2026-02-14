@@ -1,5 +1,7 @@
+
 // array-functions.test.js
 // started Dec.23,2025
+// addition Feb.14,2026
 // Rich W.
 // with
 // GitHub Copilot
@@ -110,6 +112,7 @@ describe('Array.prototype.splice', () => {
 		expect(removed).toEqual([2, 3]);
 		expect(arr).toEqual([1, 4]);
 	});
+
 	test('inserts elements at a given index', () => {
 		const arr = [1, 4];
 		arr.splice(1, 0, 2, 3);
@@ -124,6 +127,7 @@ describe('Array.prototype.unshift', () => {
 		expect(len).toBe(4);
 		expect(arr).toEqual([1, 2, 3, 4]);
 	});
+
 	test('works with empty array', () => {
 		const arr = [];
 		arr.unshift('a');
@@ -131,4 +135,37 @@ describe('Array.prototype.unshift', () => {
 	});
 });
 
+describe('Array.prototype.reduce', () => {
+	test('sums all elements in the array', () => {
+		const arr = [1, 2, 3, 4];
+		const sum = arr.reduce((acc, val) => acc + val, 0);
+		expect(sum).toBe(10);
+	});
+
+	test('works without initial value (uses first element as accumulator)', () => {
+		const arr = [5, 6, 7];
+		const result = arr.reduce((acc, val) => acc * val);
+		expect(result).toBe(210); // 5 * 6 * 7
+	});
+
+	test('throws on empty array without initial value', () => {
+		const arr = [];
+		expect(() => arr.reduce((acc, val) => acc + val)).toThrow();
+	});
+
+	test('can be used to access nested object properties from a path string', () => {
+		const obj = { a: { b: { c: 3 } } };
+		const path = "a.b.c";
+		const value = path.split(".").reduce((acc, part) => acc && acc[part], obj);
+		// double-and operator ('&&') returns last value if all are truthy
+		expect(value).toBe(3);
+	});
+
+	test('does not throw an error and returns undefined when used to access nested object properties from a path string', () => {
+		const obj = { a: { b: { c: 3 } } };
+		const path = "a.b.c.d";
+		const value = path.split(".").reduce((acc, part) => acc && acc[part], obj);
+		expect(value).toBeUndefined();
+	});
+});
 
