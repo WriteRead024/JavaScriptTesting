@@ -20,6 +20,9 @@ describe('&& operator with falsy and truthy values', () => {
     test('returns first falsy value (undefined)', () => {
         expect(undefined && 'right').toBe(undefined);
     });
+    test('returns first falsy value (NaN)', () => {
+        expect(NaN && 'right').toBe(NaN);
+    });
     test('returns second value if first is truthy and second is falsy (null)', () => {
         expect(1 && null).toBe(null);
     });
@@ -31,6 +34,9 @@ describe('&& operator with falsy and truthy values', () => {
     });
     test('returns second value if first is truthy and second is falsy (undefined)', () => {
         expect(1 && undefined).toBe(undefined);
+    });
+    test('returns second value if first is truthy and second is falsy (NaN)', () => {
+        expect(1 && NaN).toBe(NaN);
     });
     test('returns second value if both are truthy (number)', () => {
         expect(1 && 'right').toBe('right');
