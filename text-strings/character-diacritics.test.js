@@ -33,15 +33,15 @@ describe('French character diacritics', () => {
     });
 
     test('RegEx matching diacritics with unicode flag', () => {
-        const text = 'Le garçon aime caféle .';
+        const text = 'Le serveur affairé a servi le café.';
 
         // Without unicode flag, \w only matches ASCII [a-zA-Z0-9_]
         const wordsNoUnicode = text.match(/\w+/g);
-        expect(wordsNoUnicode).toEqual(['Le', 'gar', 'on', 'aime', 'caf', 'le']); // Drops ç and é
+        expect(wordsNoUnicode).toEqual(['Le', 'serveur', 'affair', 'a', 'servi', 'le', 'caf']); // Drops ç and é
 
         // Using Unicode property escapes (\p{L} matches any letter in any language) requires 'u' flag
         const wordsUnicode = text.match(/\p{L}+/gu);
-        expect(wordsUnicode).toEqual(['Le', 'garçon', 'aime', 'caféle']);
+        expect(wordsUnicode).toEqual(['Le', 'serveur', 'affairé', 'a', 'servi', 'le', 'café']);
     });
 
     test('String prototype and Locale functions (toUpperCase vs toLocaleUpperCase)', () => {
